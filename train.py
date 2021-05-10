@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 
 #if you need to install some packages, use this command:
 #!pip install tensorflow
@@ -34,3 +35,8 @@ print("Training done")
 results = lin_reg.predict(X_test)
 print("Prediction results",results)
 print("Prediction done")
+with open(os.path.join(os.environ['OUTPUT_PATH'], 'output.csv'), 'w') as output_fd:
+        output_fd.write(str(results))
+
+
+
